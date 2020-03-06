@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin hàng hóa</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: lightsteelblue">
+<form action="itemform.html" method="post">
+    <p style="text-align: right">
+        Username <input type="text" size="15">&nbsp&nbspPassword <input type="password" size="15">&nbsp<input
+            type="button" value="Login"></p>
+</form>
+<h2 class="fontall" style="text-align: center">THÔNG TIN HÀNG HÓA<br>NHẬP KHO LƯU TRỮ</h2>
+
+<form class="fontall" action="itemform.html" method="get">
+    <fieldset>
+        <table style="border-spacing: 10px">
+            <tr>
+                <td><b>Tên hàng:<span style="color: red">*</span></b></td>
+                <td><input type="text" name="Name" required></td>
+            </tr>
+            <tr>
+                <td><b>Hình ảnh:</b></td>
+                <td><input type="file" name="image" value="files"/></td>
+            </tr>
+            <tr>
+                <td><b>Xuất xứ:</b></td>
+                <td><select name="VN">
+                    <option value="VN">Việt Nam</option>
+                    <option value="TQ">Trung Quốc</option>
+                    <option value="MY">Mỹ</option>
+                    <option value="NB">Nhật Bản</option>
+                    <option value="TL">Thái Lan</option>
+                    <option value="HQ">Hàn Quốc</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><b>Ngày nhập:</b></td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td><b>Tình trạng:</b></td>
+                <td><input type="radio" name="status" value="New" checked/>Mới
+                    <input type="radio" name="status" value="Used">Đã qua sử dụng
+                    <input type="radio" name="status" value="broken">Hỏng
+                </td>
+            </tr>
+            <tr>
+                <td><b>Loại hàng:</b></td>
+                <td><input type="checkbox" name="type" value="homeuse"/>Gia dụng
+                    <input type="checkbox" name="type" value="electric"/>Điện tử
+                    <input type="checkbox" name="type" value="decor"/>Nội thất
+                    <input type="checkbox" name="type" value="office"/>Thiết bị văn phòng
+                </td>
+            </tr>
+            <tr>
+                <td><b>Ghi chú (Nếu có):</b></td>
+                </b>
+                <td><textarea name="note" cols="47" rows="5" maxlength="320" placeholder="Tối đa 320 ký tự"></textarea>
+                </td>
+            </tr>
+        </table>
+        <div style="text-align: center">
+            <input type="reset" class="button" value="Reset"/>
+        </div>
+    </fieldset>
+    <br>
+    <div style="text-align: center">
+        <h3>DANH SÁCH HÀNG ĐÃ NHẬP</h3>
+        <input type="button" id="bttt" value="Mở" onclick="toggleButton()"/>
+        <br><br>
+        <table class="table" id="form">
+            <tr>
+                <th class="border">Tên hàng</th>
+                <th class="border">Xuất xứ</th>
+                <th class="border">Tình trạng</th>
+                <th class="border">Loại hàng</th>
+                <th class="border">Thao tác</th>
+            </tr>
+            <tr>
+                <td class="tenhang">Nồi cơm Xiaomi</td>
+                <td class="border">Trung Quốc</td>
+                <td class="border">Mới</td>
+                <td class="border">Gia dụng, Điện tử</td>
+                <td class="border">Sửa | Xóa</td>
+            </tr>
+            <tr>
+                <td class="tenhang">SAMSUNG Note 9</td>
+                <td class="border">Hàn Quốc</td>
+                <td class="border">Đã qua sử dụng</td>
+                <td class="border">Điện tử</td>
+                <td class="border">Sửa | Xóa</td>
+            </tr>
+            <tr>
+                <td class="tenhang">Monitor BenQ 2411P</td>
+                <td class="border">Trung Quốc</td>
+                <td class="border">Hỏng</td>
+                <td class="border">Điện tử</td>
+                <td class="border">Sửa | Xóa</td>
+            </tr>
+            <tr>
+                <td class="tenhang">Đèn LED thông minh Xiami</td>
+                <td class="border">Trung Quốc</td>
+                <td class="border">Mới</td>
+                <td class="border">Gia dụng, Thiết bị văn phòng</td>
+                <td class="border">Sửa | Xóa</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div style="text-align: center">
+        <input type="submit" class="button" value="Cập nhập" onclick="confirm('Bạn chắc chắn chứ?')"/>
+    </div>
+    <input type="hidden" value="abc">
+</form>
+<script src="js/my-js.js"></script>
+</body>
+</html>

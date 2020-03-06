@@ -1,0 +1,13 @@
+div {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px;
+}
+
+button {
+    width: 80px;
+    height: 50px;
+    margin: 50px;
+}

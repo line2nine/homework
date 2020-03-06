@@ -1,0 +1,36 @@
+.fontall {
+    font-family: Arial, sans-serif;
+}
+
+.table {
+    border: 1px solid black;
+}
+
+.border {
+    width: 500px;
+    height: 50px;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.tenhang {
+    text-align: left;
+    width: 500px;
+    height: 50px;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.button {
+    text-align: center;
+    background-color: white;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#form {
+    display: none;
+}
