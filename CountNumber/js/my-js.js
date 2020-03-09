@@ -4,8 +4,7 @@ function countNumber() {
         n = parseInt(n);
         document.getElementById("outputNumber").innerHTML = " Số đã nhập: " + n;
         document.getElementById("result").innerHTML = "Có thể đọc là: " + count9Digits(n);
-    }
-    else
+    } else
         document.getElementById("outputNumber").innerHTML = "Không hợp lệ. Hãy nhập 9 chữ số";
 }
 
@@ -54,7 +53,10 @@ function count9Digits(n) {
         count += " linh"
     } else
         count += count1Digit(dozensmillion) + " mươi";
-    count += count1Digit(million) + " triệu";
+    if (million === 0) {
+        count += " triệu";
+    } else
+        count += count1Digit(million) + " triệu";
     count += count1Digit(hdrthousand) + " trăm";
     if (dozensthousand === 1) {
         count += " mười";
