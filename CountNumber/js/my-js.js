@@ -1,6 +1,7 @@
 function countNumber() {
-    let n = Number.parseInt(prompt("Nhập vào 9 chữ số"));
-    alert(count9Digit(n));
+    let n = document.getElementById("inputNumber").value;
+    document.getElementById("outputNumber").innerHTML = " Số đã nhập: " + n;
+    document.getElementById("result").innerHTML = "Có thể đọc là: " + count9Digit(n);
 }
 
 function count1Digit(n) {
@@ -34,7 +35,7 @@ function count9Digit(n) {
     let hdrmillion = Math.floor(n / 100000000);
     let dozensmillion = Math.floor(n / 10000000) % 10;
     let million = Math.floor(n / 1000000) % 10;
-    let hdthousand = Math.floor(n / 100000) % 10;
+    let hdrthousand = Math.floor(n / 100000) % 10;
     let dozensthousand = Math.floor(n / 10000) % 10;
     let thousand = Math.floor(n / 1000) % 10;
     let hundred = Math.floor(n / 100) % 10;
@@ -42,22 +43,26 @@ function count9Digit(n) {
     let unit = n % 10;
     let count = "";
     count += count1Digit(hdrmillion) + " trăm";
-    if (dozensmillion === 0)
-        count += " linh";
-    else
+    if (dozensmillion === 1) {
+        count += " mười";
+    } else if (dozensmillion === 0) {
+        count += " linh"
+    } else
         count += count1Digit(dozensmillion) + " mươi";
     count += count1Digit(million) + " triệu";
-    count += count1Digit(hdthousand) + " trăm";
+    count += count1Digit(hdrthousand) + " trăm";
     if (dozensthousand === 1) {
         count += " mười";
     } else if (dozensthousand === 0) {
-        count += " linh"
-    } else
-        count += count1Digit(dozensthousand) + " mươi";
-    count += count1Digit(thousand) + " nghìn";
-    if (hundred === 0)
         count += " linh";
-    else
+    } else
+        count += count1Digit(dozensthousand);
+        count += count1Digit(thousand) + " nghìn";
+    if (hundred === 1) {
+        count += " mười";
+    } else if (hundred === 0) {
+        count += " linh";
+    } else
         count += count1Digit(hundred) + " trăm";
     if (dozens === 1) {
         count += " mười";
@@ -65,6 +70,9 @@ function count9Digit(n) {
         count += " linh";
     } else
         count += count1Digit(dozens);
-    count += count1Digit(unit);
+    if (unit === 1) {
+        count += " mốt";
+    } else
+        count += count1Digit(unit);
     return count;
 }
